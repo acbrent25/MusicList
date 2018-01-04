@@ -1,2 +1,2 @@
 # MusicList
-An app to track musci
+An app to track music
