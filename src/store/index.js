@@ -2,10 +2,12 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 // Utility that logs every action to the console, and also shows app state before and after the action is applied.
 import { logger } from 'redux-logger';
 import DevTools from '../components/shared/DevTools';
+import AuthenticationReducer from '../reducers/authentication';
 import ProgressReducer from '../reducers/progress';
 
 const combinedReducers = combineReducers({
   progress: ProgressReducer,
+  authentication: AuthenticationReducer,
 });
 
 const enhancer = compose(
