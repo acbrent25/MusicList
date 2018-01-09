@@ -33,9 +33,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /.jsx?$/,
         exclude: /(node_modules|bower_components|public\/)/,
         loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'es2017'],
+        },
+      },
+      {
+        test: /.js?$/,
+        exclude: /(node_modules|bower_components|public\/)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'es2017'],
+        },
       },
       {
         test: /\.css$/,

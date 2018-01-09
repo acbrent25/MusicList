@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import ChangePasswordPage from './account/ChangePasswordPageContainer';
+import AlbumsPage from './albums/AlbumsPageContainer';
 import ErrorBox from './shared/ErrorBoxContainer';
 import HeaderContainer from './shared/HeaderContainer';
 import HomePage from './home/HomePageContainer';
@@ -19,11 +20,13 @@ export default function Template(props) {
         <section className="page-content container-fluid">
           <ErrorBox />
           <Route exact path="/" component={HomePage} />
+          <Route path="/account/change-password/:hash" component={ChangePasswordPage} />
           <Route exact path="/account/login" component={LoginPage} />
           <Route path="/account/profile/:id" component={ProfilePage} />
           <Route exact path="/account/register" component={RegisterPage} />
           <Route exact path="/account/registration-success" component={RegistrationSuccessPage} />
           <Route exact path="/account/reset-password" component={ResetPasswordPage} />
+          <Route exact path="/albums" component={AlbumsPage} />
         </section>
         <div className="loader-wrapper" style={progress > 0 ? { display: 'block' } : { display: 'none' }}>
           <div className="loader-box">
